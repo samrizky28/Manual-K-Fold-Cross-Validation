@@ -13,7 +13,7 @@ kf = KFold(n_splits=5)
 
 train_cv = []
 test_cv = []
-for train, test in kf.split(X_norm):
+for train, test in kf.split(X):
   train_cv.append(train)
   test_cv.append(test)
 
