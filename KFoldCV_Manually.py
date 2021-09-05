@@ -1,5 +1,6 @@
 import pandas as pd
 import math
+from sklearn.model_selection KFold
 
 #X is the independent variable in the dataset
 #y is the target variable
@@ -8,6 +9,14 @@ import math
 n=len(X)
 
 #Let say we want to make 5-fold CV. It means, we are equivalent to doing a 20% separation of test data, then:
+kf = KFold(n_splits=5)
+
+train_cv = []
+test_cv = []
+for train, test in kf.split(X_norm):
+  train_cv.append(train)
+  test_cv.append(test)
+
 fold1 = math.ceil(0.2*n)
 fold2 = math.ceil(0.4*n)
 fold3 = math.ceil(0.6*n)
